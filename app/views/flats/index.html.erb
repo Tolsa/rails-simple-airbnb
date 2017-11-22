@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<div class="wrapper">
+  <h1>All our flats (<%= @flats.length %>)</h1>
+  <div class="container">
+
+    <% @flats.each do |flat| %>
+      <div class="card-flat">
+        <h3><%= flat.name %></h3>
+        <div class="item"><%= flat.address %></div>
+  <!--         <div><%= flat.description %></div> -->
+        <div class="price-guests-box">
+          <div class="item"><%= flat.price_per_night %></div>
+          <div class="item"><%= flat.number_of_guests %></div>
+        </div>
+
+        <div class="item" id="link-to">
+          <%= link_to "More info", flat_path(flat.id) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to 'New Flat', new_flat_path %>
+</div>
+
+
+
